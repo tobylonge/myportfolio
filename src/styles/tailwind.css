@@ -3,3 +3,18 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.theme-light {
+  --primary: #edf1fe;
+  --secondary: #ffffff;
+  --color-main: #ffbe09;
+  --text-main: #727698;
+  --text-secondary: #42495c;
+}
+.theme-dark {
+  --primary: #191d29;
+  --secondary: #161922;
+  --color-main: #fed06e;
+  --text-main: #b7bacc;
+  --text-secondary: #ffffff;
+}
