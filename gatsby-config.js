@@ -1,10 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Oluwatobi Alonge Portfolio`,
+    description: `A page that exemplifies Oluwatobi Alonge's beliefs, skills, qualifications, education, training and experiences. It provides insight into his personality and work ethic.`,
+    author: `@Oluwatobi Alonge`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [require("tailwindcss")],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

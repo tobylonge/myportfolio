@@ -7,13 +7,17 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO
+      title="Home"
+      keywords={[`oluwatobi`, `portfolio`, `alonge`, "frontend developer"]}
+    />
     <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
+    <p>Welcome</p>
     <p>Now go build something great.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
+    <button className="py-4 px-4 bg-blue-600">Button</button>
     <Link to="/page-2/">Go to page 2</Link> <br />
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
