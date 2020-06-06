@@ -1,0 +1,18 @@
+.before-line {
+  overflow: hidden;
+  &:before {
+    background-color: var(--color-main);
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 5%;
+    right: 0.5em;
+    margin-left: 0;
+  }
+}
+
+// .main-content {
+//   height: calc(100vh - 70px);
+// }

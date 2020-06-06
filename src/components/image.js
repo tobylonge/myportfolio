@@ -16,10 +16,15 @@ import Img from "gatsby-image"
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      placeholderImage: file(relativePath: { eq: "me.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+          fluid(
+            maxWidth: 500
+            duotone: { highlight: "#0ec4f1", shadow: "#192550" }
+            quality: 0
+            traceSVG: { color: "#1E2151" }
+          ) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -28,5 +33,21 @@ const Image = () => {
 
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
 }
+
+// const Logo = () => {
+//   const data = useStaticQuery(graphql`
+//     query {
+//       placeholderImage: file(relativePath: { eq: "logo.svg" }) {
+//         childImageSharp {
+//           fluid(maxHeight: 50) {
+//             ...GatsbyImageSharpFluid
+//           }
+//         }
+//       }
+//     }
+//   `)
+
+//   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+// }
 
 export default Image
