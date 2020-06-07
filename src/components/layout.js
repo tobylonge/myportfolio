@@ -15,11 +15,7 @@ const Layout = ({ children }) => {
   const { theme } = useContext(ThemeContext)
 
   return (
-    <div
-      className={`${
-        theme === "light" ? "theme-light" : "theme-dark"
-      } bg-primary`}
-    >
+    <div className={`${theme ? "theme-light" : "theme-dark"} bg-primary`}>
       <div className="h-screen">
         <main className="h-full">{children}</main>
       </div>
@@ -31,10 +27,6 @@ const Layout = ({ children }) => {
         </footer> */}
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

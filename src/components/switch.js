@@ -7,7 +7,8 @@ const Switch = props => {
         type="checkbox"
         name="switch"
         id="checkbox"
-        onClick={props.handleChange}
+        onChange={e => props.handleChange(e)}
+        checked={props.theme}
       />
       <span className="switch-svg"></span>
     </label>
