@@ -35,7 +35,7 @@ const Home = props => {
               <LinkedInIcon height={24} width={24} color={props.themeColor} />
             </div>
           </div>
-          <Button style={"primary"}>Contact Me</Button>
+          <Button type={"primary"}>Contact Me</Button>
         </div>
         <div className="w-full sm:w-1/2 px-10 pt-10 sm:flex sm:flex-col absolute p-0 bottom-0 right-0">
           <Image />

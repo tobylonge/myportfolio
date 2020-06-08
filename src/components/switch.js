@@ -2,7 +2,7 @@ import React from "react"
 
 const Switch = props => {
   return (
-    <label className="switch">
+    <label className="switch" htmlFor="checkbox">
       <input
         type="checkbox"
         name="switch"

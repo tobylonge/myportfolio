@@ -7,10 +7,16 @@
     height: 1px;
     position: relative;
     vertical-align: middle;
-    width: 5%;
+    width: 30px;
     right: 0.5em;
     margin-left: 0;
   }
+}
+.rotate {
+  position: absolute;
+  left: -45px;
+  transform: rotate(-90deg);
+  top: 30%;
 }
 
 // .main-content {

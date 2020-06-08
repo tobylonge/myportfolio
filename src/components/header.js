@@ -19,7 +19,7 @@ const Header = () => {
     // }
   }
   return (
-    <header>
+    <header className="container mx-auto py-5">
       <div className="flex justify-between">
         <Link to="/">
           {/* <img src={logo} alt="Logo" /> */}
