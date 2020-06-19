@@ -8,9 +8,9 @@ export default function progressBar(props) {
           <p className="text-xs text-main-text">{props.title}</p>
           <p className="text-xs text-main-text">{props.percentage}</p>
         </div>
-        <div class="shadow bg-black mt-2 rounded-full">
+        <div className="shadow bg-black mt-2 rounded-full">
           <div
-            class="bg-main-color text-xs leading-none py-1 text-center text-white rounded-full"
+            className="bg-main-color text-xs leading-none py-1 text-center text-white rounded-full"
             style={{ width: `${props.percentage}` }}
           >
             {/* 45% */}

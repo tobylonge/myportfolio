@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Header from "../components/header"
 import Home from "../sections/home"
 import About from "../sections/about"
+import Works from "../sections/works"
 import { ThemeContext } from "../context/themeContext"
 
 const IndexPage = () => {
@@ -22,6 +23,7 @@ const IndexPage = () => {
         <Header />
         <Home themeColor={themeColor} />
         <About />
+        <Works />
       </div>
     </Layout>
   )

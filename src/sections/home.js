@@ -1,12 +1,24 @@
 import React from "react"
-import {
-  GithubIcon,
-  BehanceIcon,
-  LinkedInIcon,
-} from "../components/socialMediaIcons"
+import { GithubIcon, DribbbleIcon, LinkedInIcon } from "../components/Icons"
 import Button from "../components/button"
-import Image from "../components/image"
+// import Image from "../components/image"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 const Home = props => {
+  const data = useStaticQuery(graphql`
+    query Imag {
+      image: file(relativePath: { eq: "me-bg-blue.png" }) {
+        id
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  console.log("data ", data)
+
   return (
     <div
       className={`bg-primary flex flex-col justify-center flex`}
@@ -29,7 +41,7 @@ const Home = props => {
               <GithubIcon height={24} width={24} color={props.themeColor} />
             </div>
             <div className="mx-3">
-              <BehanceIcon height={24} width={24} color={props.themeColor} />
+              <DribbbleIcon height={24} width={24} color={props.themeColor} />
             </div>
             <div>
               <LinkedInIcon height={24} width={24} color={props.themeColor} />
@@ -38,7 +50,7 @@ const Home = props => {
           <Button type={"primary"}>Contact Me</Button>
         </div>
         <div className="w-full sm:w-1/2 px-10 pt-10 sm:flex sm:flex-col absolute p-0 bottom-0 right-0">
-          <Image />
+          <Img fluid={data.image.childImageSharp.fluid} />
         </div>
       </div>
 

@@ -17,14 +17,13 @@ const Image = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "me.png" }) {
+        id
         childImageSharp {
           fluid(
             maxWidth: 500
             duotone: { highlight: "#0ec4f1", shadow: "#192550" }
-            quality: 0
-            traceSVG: { color: "#1E2151" }
           ) {
-            ...GatsbyImageSharpFluid_tracedSVG
+            ...GatsbyImageSharpFluid
           }
         }
       }

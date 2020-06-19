@@ -1,3 +1,7 @@
+body {
+  background: var(--primary);
+}
+
 .before-line {
   overflow: hidden;
   &:before {

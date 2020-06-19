@@ -17,9 +17,13 @@ const Skills = () => {
           <span>My Skills</span>
         </h4>
         <div className="w-full">
-          <div class="w-full flex flex-wrap ml-4">
-            {skills.map(skill => (
-              <ProgressBar title={skill.title} percentage={skill.percentage} />
+          <div className="w-full flex flex-wrap ml-4">
+            {skills.map((skill, i) => (
+              <ProgressBar
+                title={skill.title}
+                percentage={skill.percentage}
+                key={i}
+              />
             ))}
           </div>
         </div>

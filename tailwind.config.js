@@ -12,6 +12,8 @@ module.exports = {
         "main-color": "var(--color-main)",
         "main-text": "var(--text-main)",
         "secondary-text": "var(--text-secondary)",
+        "border-primary": "var(--border-primary)",
+        "sub-text": "var(--text-sub)",
       },
     },
   },

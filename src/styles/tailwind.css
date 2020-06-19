@@ -16,6 +16,9 @@ html {
   --color-main: #dbab09;
   --text-main: #727698;
   --text-secondary: #42495c;
+  --border-primary: rgb(204, 214, 221);
+  --text-sub: rgb(101, 119, 134);
+  --hover-bg: rgba(0, 0, 0, 0.03);
 }
 .theme-dark {
   --primary: #191d29;
@@ -23,4 +26,7 @@ html {
   --color-main: #fed06e;
   --text-main: #b7bacc;
   --text-secondary: #ffffff;
+  --border-primary: rgb(56, 68, 77);
+  --text-sub: rgb(136, 153, 166);
+  --hover-bg: rgba(255, 255, 255, 0.03);
 }
