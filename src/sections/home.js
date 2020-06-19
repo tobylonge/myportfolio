@@ -72,7 +72,7 @@ const Home = props => {
               fixed={data.image.childImageSharp.fixed}
               objectFit="cover"
               imgStyle={{
-                background: "#fff",
+                background: "var(--text-secondary)",
                 borderRadius: "50%",
                 height: "154px",
                 objectPosition: "top center",
