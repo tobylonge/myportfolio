@@ -38,13 +38,22 @@ const Home = props => {
           </p>
           <div className="mt-5 flex mb-16">
             <div>
-              <GithubIcon height={24} width={24} color={props.themeColor} />
+              <a href="https://github.com/tobylonge" target="_blank">
+                <GithubIcon height={24} width={24} color={props.themeColor} />
+              </a>
             </div>
-            <div className="mx-3">
-              <DribbbleIcon height={24} width={24} color={props.themeColor} />
+            <div className="mx-4">
+              <a href="https://dribbble.com/tobylonge" target="_blank">
+                <DribbbleIcon height={24} width={24} color={props.themeColor} />
+              </a>
             </div>
             <div>
-              <LinkedInIcon height={24} width={24} color={props.themeColor} />
+              <a
+                href="https://www.linkedin.com/in/alonge-oluwatobi/"
+                target="_blank"
+              >
+                <LinkedInIcon height={24} width={24} color={props.themeColor} />
+              </a>
             </div>
           </div>
           <Button type={"primary"}>Contact Me</Button>

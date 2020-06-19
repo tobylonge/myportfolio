@@ -15,6 +15,11 @@ body {
     right: 0.5em;
     margin-left: 0;
   }
+  &.opacity {
+    &:before {
+      opacity: 0.5;
+    }
+  }
 }
 .rotate {
   position: absolute;

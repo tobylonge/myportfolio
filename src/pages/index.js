@@ -8,6 +8,8 @@ import Home from "../sections/home"
 import About from "../sections/about"
 import Works from "../sections/works"
 import { ThemeContext } from "../context/themeContext"
+import Contact from "../sections/contact"
+import Footer from "../sections/footer"
 
 const IndexPage = () => {
   const { theme } = useContext(ThemeContext)
@@ -24,6 +26,8 @@ const IndexPage = () => {
         <Home themeColor={themeColor} />
         <About />
         <Works />
+        <Contact themeColor={themeColor} />
+        <Footer />
       </div>
     </Layout>
   )

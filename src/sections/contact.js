@@ -1,12 +1,85 @@
 import React from "react"
+import { GithubIcon, DribbbleIcon, LinkedInIcon } from "../components/Icons"
+import Button from "../components/button"
 
-const Contact = () => {
+const Contact = props => {
   return (
-    <div className={`bg-primary justify-center flex min-h-screen`}>
-      <div className="w-full lg:w-9/12 mx-auto sm:flex h-full relative flex-col justify-center py-16">
+    <div className={`bg-secondary justify-center flex min-h-screen`}>
+      <div className="w-full lg:w-9/12 mx-auto sm:flex h-full relative flex-col justify-center">
         <div className="flex">
-          <div className="lg:w-1/3"></div>
-          <div className="lg:w-2/3"></div>
+          <div className="lg:w-1/3 py-16">
+            <p className="text-base text-main-color before-line mb-4 opacity">
+              +2348068212202
+            </p>
+            <p className="text-base text-main-color before-line mb-4 opacity">
+              tobylonge@gmail.com
+            </p>
+            <p className="text-base text-main-color before-line mb-4 opacity">
+              Lagos, Nigeria
+            </p>
+            <div className="mt-8 flex mb-16">
+              <div>
+                <a href="https://github.com/tobylonge" target="_blank">
+                  <GithubIcon height={24} width={24} color={props.themeColor} />
+                </a>
+              </div>
+              <div className="mx-4">
+                <a href="https://dribbble.com/tobylonge" target="_blank">
+                  <DribbbleIcon
+                    height={24}
+                    width={24}
+                    color={props.themeColor}
+                  />
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/alonge-oluwatobi/"
+                  target="_blank"
+                >
+                  <LinkedInIcon
+                    height={24}
+                    width={24}
+                    color={props.themeColor}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="lg:w-2/3">
+            <div
+              className="rounded overflow-hidden -mt-16 p-3 bg-secondary px-8 py-12"
+              style={{ boxShadow: "0 0px 32px 0px rgba(0, 0, 0, 0.50)" }}
+            >
+              <form className="justify-center flex">
+                <div className="mb-4 w-2/3 w-auto">
+                  <input
+                    className="shadow appearance-none border rounded w-full p-3 text-main-text focus:outline-none focus:shadow-outline bg-secondary border-main-text mb-8"
+                    type="text"
+                    placeholder="Your Name"
+                    id="name"
+                  />
+                  <input
+                    className="shadow appearance-none border rounded w-full p-3 text-main-text focus:outline-none focus:shadow-outline bg-secondary border-main-text mb-8"
+                    type="email"
+                    placeholder="Your Email Address"
+                    id="email"
+                  />
+                  <textarea
+                    name=""
+                    id=""
+                    placeholder="Your Message"
+                    cols="30"
+                    rows="10"
+                    className="shadow appearance-none border rounded w-full p-3 text-main-text focus:outline-none focus:shadow-outline bg-secondary border-main-text mb-8"
+                  ></textarea>
+                  <div className="flex justify-end -mr-4 mt-10">
+                    <Button type={"primary"}>Send Message</Button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
