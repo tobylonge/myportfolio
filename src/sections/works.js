@@ -75,7 +75,7 @@ const Works = () => {
             Recent Works
           </h4>
           <ul className="flex text-main-text justify-center">
-            <li className="px-10 cursor-pointer">
+            <li className="px-8 sm:px-10 cursor-pointer">
               <a
                 className={!type ? "text-main-color" : 0}
                 onClick={() => filterWorks(0)}
@@ -84,12 +84,15 @@ const Works = () => {
               </a>
             </li>
             <li
-              className="px-10 border-l border-r border-main-text cursor-pointer"
+              className="px-8 sm:px-10 border-l border-r border-main-text cursor-pointer"
               onClick={() => filterWorks(1)}
             >
               <a className={type === 1 ? "text-main-color" : 0}>Web</a>
             </li>
-            <li className="px-10 cursor-pointer" onClick={() => filterWorks(2)}>
+            <li
+              className="px-8 sm:px-10 cursor-pointer"
+              onClick={() => filterWorks(2)}
+            >
               <a className={type === 2 ? "text-main-color" : 0}>Design</a>
             </li>
           </ul>

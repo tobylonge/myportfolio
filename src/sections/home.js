@@ -25,9 +25,10 @@ const Home = props => {
 
   return (
     <div
-      className={`bg-primary flex flex-col flex min-h-screen pb-5 sm:justify-center`}
-      style={{ minHeight: "calc(100vh - 1.875rem)" }}
+      className={`bg-primary flex flex-col flex min-h-screen sm:h-screen pb-5 sm:pb-0 sm:justify-center`}
+      // style={{ height: "calc(100vh - 3.875rem)" }}
     >
+      <Header />
       <div className="w-full sm:w-10/12 md:w-9/12 mx-auto px-5 sm:px-0 flex h-full relative flex-col-reverse sm:flex-row sm:justify-start justify-end ">
         <div className="sm:w-1/2 self-center">
           <h4 className="uppercase text-sm text-main-color before-line mb-3">
@@ -73,7 +74,7 @@ const Home = props => {
               imgStyle={{
                 background: "#fff",
                 borderRadius: "50%",
-                // height: "154px",
+                height: "154px",
                 objectPosition: "top center",
               }}
               style={{ height: "154px" }}
@@ -81,8 +82,6 @@ const Home = props => {
           </div>
         </div>
       </div>
-
-      {/* <Link to="/page-2/">Go to page 2</Link> <br /> */}
     </div>
   )
 }

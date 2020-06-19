@@ -22,7 +22,7 @@ const IndexPage = () => {
       />
 
       <div className="h-full">
-        <Header />
+        {/* <Header /> */}
         <Home themeColor={themeColor} />
         <About />
         <Works />

@@ -20,7 +20,7 @@ const WorkCard = props => {
       onMouseEnter={() => mouseEnter(props.index)}
       onMouseLeave={() => mouseLeave()}
     >
-      <div className="max-w-xs rounded overflow-hidden shadow-lg m-3 border border-border-primary cursor-pointer m-auto">
+      <div className="max-w-xs sm:max-w-sm rounded overflow-hidden shadow-lg m-3 border border-border-primary cursor-pointer m-auto">
         <figure className="border-b border-border-primary relative sm:h-48">
           <Img key={props.id} fluid={props.childImageSharp.fluid} />
           {viewId === props.index && (
