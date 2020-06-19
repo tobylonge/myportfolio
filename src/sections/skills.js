@@ -17,7 +17,7 @@ const Skills = () => {
           <span>My Skills</span>
         </h4>
         <div className="w-full">
-          <div className="w-full flex flex-wrap ml-4">
+          <div className="w-full flex flex-wrap ml-4 sm:pr-0 pr-5">
             {skills.map((skill, i) => (
               <ProgressBar
                 title={skill.title}

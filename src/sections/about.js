@@ -4,7 +4,7 @@ import Skills from "./skills"
 const about = () => {
   return (
     <div className={`bg-secondary justify-center flex min-h-screen `}>
-      <div className="w-full lg:w-9/12 mx-auto sm:flex h-full relative flex-col justify-center">
+      <div className="w-full sm:w-10/12 md:w-9/12 mx-auto sm:flex h-full relative flex-col justify-center px-5 sm:px-0">
         <div className="mt-20">
           <h4 className="uppercase text-base text-main-color before-line mb-3">
             About Me

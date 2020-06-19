@@ -4,6 +4,7 @@ import Button from "../components/button"
 // import Image from "../components/image"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import Header from "../components/header"
 const Home = props => {
   const data = useStaticQuery(graphql`
     query Imag {
@@ -13,6 +14,9 @@ const Home = props => {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
           }
+          fixed(height: 230) {
+            ...GatsbyImageSharpFixed
+          }
         }
       }
     }
@@ -21,10 +25,10 @@ const Home = props => {
 
   return (
     <div
-      className={`bg-primary flex flex-col justify-center flex`}
-      style={{ height: "calc(100% - 1.875rem)" }}
+      className={`bg-primary flex flex-col flex min-h-screen pb-5 sm:justify-center`}
+      style={{ minHeight: "calc(100vh - 1.875rem)" }}
     >
-      <div className="w-full lg:w-9/12 mx-auto sm:flex h-full relative">
+      <div className="w-full sm:w-10/12 md:w-9/12 mx-auto px-5 sm:px-0 flex h-full relative flex-col-reverse sm:flex-row sm:justify-start justify-end ">
         <div className="sm:w-1/2 self-center">
           <h4 className="uppercase text-sm text-main-color before-line mb-3">
             Hello
@@ -58,8 +62,23 @@ const Home = props => {
           </div>
           <Button type={"primary"}>Contact Me</Button>
         </div>
-        <div className="w-full sm:w-1/2 px-10 pt-10 sm:flex sm:flex-col absolute p-0 bottom-0 right-0">
-          <Img fluid={data.image.childImageSharp.fluid} />
+        <div className="sm:w-1/2 px-10 sm:pt-10 sm:flex sm:flex-col sm:absolute p-0 bottom-0 right-0">
+          <div className="hidden sm:block">
+            <Img fluid={data.image.childImageSharp.fluid} />
+          </div>
+          <div className="block sm:hidden text-center">
+            <Img
+              fixed={data.image.childImageSharp.fixed}
+              objectFit="cover"
+              imgStyle={{
+                background: "#fff",
+                borderRadius: "50%",
+                // height: "154px",
+                objectPosition: "top center",
+              }}
+              style={{ height: "154px" }}
+            />
+          </div>
         </div>
       </div>
 

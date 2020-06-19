@@ -16,12 +16,12 @@ const WorkCard = props => {
 
   return (
     <div
-      className="w-1/3 flex-wrap"
+      className="w-full sm:w-1/2 lg:w-1/3 flex-wrap sm:mb-0 mb-5"
       onMouseEnter={() => mouseEnter(props.index)}
       onMouseLeave={() => mouseLeave()}
     >
-      <div className="max-w-sm rounded overflow-hidden shadow-lg m-3 border border-border-primary cursor-pointer">
-        <figure className="border-b border-border-primary relative h-48">
+      <div className="max-w-xs rounded overflow-hidden shadow-lg m-3 border border-border-primary cursor-pointer m-auto">
+        <figure className="border-b border-border-primary relative sm:h-48">
           <Img key={props.id} fluid={props.childImageSharp.fluid} />
           {viewId === props.index && (
             <div
@@ -52,7 +52,7 @@ const WorkCard = props => {
             <div className="my-3 flex flex-wrap">
               {props.descLang.map(lang => (
                 <span
-                  className="rounded-full py-1 px-2 text-white mr-2 flex items-center justify-center text-xs"
+                  className="rounded-full py-1 px-2 text-white mr-2 mb-2 flex items-center justify-center text-xs"
                   style={{ background: lang.color }}
                 >
                   <span className="mr-1">{lang.icon}</span>
