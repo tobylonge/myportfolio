@@ -9,7 +9,11 @@ const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState(null)
   useEffect(() => {
     const loadTheme = () => {
-      const theme = localStorage.getItem("theme")
+      let theme = localStorage.getItem("theme")
+      if (!theme) {
+        console.log("I got here init", theme)
+        theme = false
+      }
       console.log("I got here ", theme)
       return JSON.parse(theme)
     }

@@ -30,20 +30,20 @@ const Header = () => {
           <div className="sm:hidden">
             <button
               type="button"
-              class="block text-main-text focus:outline-none"
+              className="block text-main-text focus:outline-none"
               onClick={() => {
                 setMenuOpen(!menuOpen)
               }}
             >
               {!menuOpen ? (
-                <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
+                <svg className="h-8 w-8 fillCurrent" viewBox="0 0 24 24">
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
                   />
                 </svg>
               ) : (
-                <span class="text-4xl">×</span>
+                <span className="text-4xl">×</span>
               )}
             </button>
           </div>
