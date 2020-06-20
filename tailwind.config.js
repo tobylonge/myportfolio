@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [],
+  purge: false,
   theme: {
     fontFamily: {
       body: ["Source Sans Pro", "sans-serif"],

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import WorkCard from "../components/WorkCard"
+import WorkCard from "../components/workCard"
 import { description } from "../data/data"
 
 const Works = () => {
