@@ -12,7 +12,7 @@ export default function Footer() {
         >
           Oluwatobi Alonge{" "}
         </a>
-        © 2020.
+        © {new Date().getFullYear()}.
       </p>
       <p className="text-main-text">
         Built with{" "}

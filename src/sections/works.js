@@ -68,7 +68,10 @@ const Works = () => {
     }
   }
   return (
-    <div className={`bg-primary justify-center flex min-h-screen`}>
+    <div
+      className={`bg-primary justify-center flex min-h-screen`}
+      id="portfolio"
+    >
       <div className="w-full sm:w-10/12 md:w-9/12 px-5 sm:px-0 mx-auto sm:flex h-full relative flex-col justify-center pt-16 sm:pb-40">
         <div className="text-center">
           <h4 className="uppercase text-base text-main-color mb-5">

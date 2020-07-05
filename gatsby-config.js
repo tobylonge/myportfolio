@@ -37,6 +37,13 @@ module.exports = {
     },
     "gatsby-plugin-remove-console",
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100,
+        duration: 1000,
+      },
+    },
+    {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: false,

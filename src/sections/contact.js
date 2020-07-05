@@ -49,7 +49,8 @@ const Contact = props => {
           <div className="sm:w-2/3">
             <div
               className="rounded overflow-hidden -mt-16 p-3 bg-secondary p-3 sm:p-8 mb-8"
-              style={{ boxShadow: "0 0px 32px 0px rgba(0, 0, 0, 0.50)" }}
+              style={{ boxShadow: "0 0px 15px 0px rgba(0, 0, 0, 0.50)" }}
+              id="contact"
             >
               <form className="justify-center flex">
                 <div className="mb-4 lg:w-2/3 w-auto">
@@ -69,7 +70,7 @@ const Contact = props => {
                     name=""
                     id=""
                     placeholder="Your Message"
-                    cols="20"
+                    cols="15"
                     rows="7"
                     className="shadow appearance-none border rounded w-full p-3 text-main-text focus:outline-none focus:shadow-outline bg-secondary border-main-text mb-8"
                   ></textarea>
