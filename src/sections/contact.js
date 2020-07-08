@@ -54,26 +54,38 @@ const Contact = props => {
             >
               <form className="justify-center flex">
                 <div className="mb-4 lg:w-2/3 w-auto">
-                  <input
-                    className="shadow appearance-none border rounded w-full p-3 text-main-text focus:outline-none focus:shadow-outline bg-secondary border-main-text mb-8"
-                    type="text"
-                    placeholder="Your Name"
-                    id="name"
-                  />
-                  <input
-                    className="shadow appearance-none border rounded w-full p-3 text-main-text focus:outline-none focus:shadow-outline bg-secondary border-main-text mb-8"
-                    type="email"
-                    placeholder="Your Email Address"
-                    id="email"
-                  />
-                  <textarea
-                    name=""
-                    id=""
-                    placeholder="Your Message"
-                    cols="15"
-                    rows="7"
-                    className="shadow appearance-none border rounded w-full p-3 text-main-text focus:outline-none focus:shadow-outline bg-secondary border-main-text mb-8"
-                  ></textarea>
+                  <div className="group -ionic">
+                    <input
+                      className=" shadow border rounded field bg-secondary border-main-text text-main-text"
+                      type="text"
+                      required
+                    />
+
+                    <label className="title text-main-text">Your Name</label>
+                  </div>
+
+                  <div className="group -ionic">
+                    <input
+                      className=" shadow border rounded field bg-secondary border-main-text text-main-text"
+                      type="email"
+                      required
+                    />
+
+                    <label className="title text-main-text">
+                      Your Email Address
+                    </label>
+                  </div>
+
+                  <div className="group -ionic">
+                    <textarea
+                      className=" shadow border rounded field bg-secondary border-main-text text-main-text"
+                      cols="15"
+                      rows="7"
+                      required
+                    ></textarea>
+
+                    <label className="title text-main-text">Your Message</label>
+                  </div>
                   <div className="flex justify-end -mr-4 mt-10">
                     <Button type={"primary"}>Send Message</Button>
                   </div>

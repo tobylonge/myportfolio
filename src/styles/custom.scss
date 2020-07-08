@@ -28,6 +28,70 @@ body {
   top: 30%;
 }
 
+.group {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 2rem;
+  &.-ionic {
+    > textarea.field {
+      height: auto;
+      padding-top: 5px;
+    }
+    > .field {
+      height: 2.8rem;
+
+      text-indent: 12px;
+      // border-radius: 6px;
+      // border: 1px solid #ddd;
+
+      &:focus,
+      &:valid {
+        // border-color: map-get($colors, primary);
+
+        + .title {
+          top: 0;
+
+          // color: map-get($colors, primary);
+        }
+      }
+
+      + .title {
+        left: 8px;
+
+        padding: 0 0.5rem;
+
+        background-color: var(--secondary);
+      }
+    }
+  }
+
+  > .field {
+    width: 100%;
+
+    // border: 0;
+    outline: none;
+
+    + .title {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      // color: var(--main-text);
+      transition: 0.3s;
+      pointer-events: none;
+    }
+
+    &:focus,
+    &:valid {
+      + .title {
+        transition: 0.3s;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+
 // .main-content {
 //   height: calc(100vh - 70px);
 // }
