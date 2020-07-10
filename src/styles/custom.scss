@@ -32,7 +32,6 @@ body {
   position: relative;
 
   width: 100%;
-  margin-bottom: 2rem;
   &.-ionic {
     > textarea.field {
       height: auto;
@@ -46,7 +45,7 @@ body {
       // border: 1px solid #ddd;
 
       &:focus,
-      &:valid {
+      &.notEmpty {
         // border-color: map-get($colors, primary);
 
         + .title {
@@ -83,7 +82,7 @@ body {
     }
 
     &:focus,
-    &:valid {
+    &.notEmpty {
       + .title {
         transition: 0.3s;
         font-size: 0.75rem;
@@ -92,6 +91,13 @@ body {
   }
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--secondary) inset !important;
+  -webkit-text-fill-color: var(--text-main) !important;
+}
 // .main-content {
 //   height: calc(100vh - 70px);
 // }

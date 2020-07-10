@@ -1,8 +1,83 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
+import axios from "axios"
+import { host_url } from "./../../app-config"
 import { GithubIcon, DribbbleIcon, LinkedInIcon } from "../components/Icons"
 import Button from "../components/button"
 
 const Contact = props => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+  const [error, setError] = useState({
+    nameError: false,
+    emailError: false,
+  })
+  const nameRef = useRef(null)
+  const emailRef = useRef(null)
+  const handleChange = e => {
+    const value = e.target.value
+    // if (value) {
+    setError({ nameError: false, emailError: false })
+    setUser({
+      ...user,
+      [e.target.name]: value,
+    })
+    // }
+  }
+
+  const validateEmail = email => {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(email)
+  }
+
+  const checkValidations = () => {
+    let isValid = true
+    if (!user.name) {
+      setError({
+        ...error,
+        nameError: true,
+      })
+      nameRef.current.focus()
+      isValid = false
+      return isValid
+    } else if (!user.email || !validateEmail(user.email)) {
+      setError({
+        ...error,
+        emailError: true,
+      })
+      emailRef.current.focus()
+      isValid = false
+      return isValid
+    }
+    return isValid
+  }
+
+  const submitContact = e => {
+    e.preventDefault()
+    console.log("user ", user)
+    const isVaild = checkValidations()
+    if (!isVaild) {
+      return
+    }
+    console.log("Submiting Form")
+    axios
+      .post(`${host_url}sendMail`, user)
+      .then(response => {
+        console.log("response ", response)
+      })
+      .catch(error => {})
+  }
+
+  const resetForm = () => {
+    setUser({
+      name: "",
+      email: "",
+      message: "",
+    })
+  }
+
   return (
     <div className={`bg-secondary justify-center flex min-h-screen`}>
       <div className="w-full sm:w-10/12 md:w-9/12 px-5 sm:px-0 mx-auto sm:flex h-full relative flex-col justify-center">
@@ -54,40 +129,89 @@ const Contact = props => {
             >
               <form className="justify-center flex">
                 <div className="mb-4 lg:w-2/3 w-auto">
-                  <div className="group -ionic">
-                    <input
-                      className=" shadow border rounded field bg-secondary border-main-text text-main-text"
-                      type="text"
-                      required
-                    />
+                  <div className="mb-8">
+                    <div className="group -ionic">
+                      <input
+                        className={`shadow border rounded field bg-secondary ${
+                          error.nameError
+                            ? "border-red-400"
+                            : "border-main-text"
+                        } text-main-text ${user.name ? "notEmpty" : ""}`}
+                        type="text"
+                        value={user.name}
+                        name="name"
+                        onChange={handleChange}
+                        ref={nameRef}
+                        id="name"
+                      />
 
-                    <label className="title text-main-text">Your Name</label>
+                      <label
+                        className={`title ${
+                          error.nameError ? "text-red-400" : "text-main-text"
+                        }`}
+                        htmlFor="name"
+                      >
+                        Your Name
+                      </label>
+                    </div>
+                    <p className="text-xs text-red-400 mt-1">
+                      {error.nameError ? "Please enter your name" : ""}
+                    </p>
                   </div>
 
-                  <div className="group -ionic">
-                    <input
-                      className=" shadow border rounded field bg-secondary border-main-text text-main-text"
-                      type="email"
-                      required
-                    />
+                  <div className="mb-8">
+                    <div className="group -ionic">
+                      <input
+                        className={`shadow border rounded field bg-secondary ${
+                          error.emailError
+                            ? "border-red-400"
+                            : "border-main-text"
+                        } text-main-text ${user.email ? "notEmpty" : ""}`}
+                        type="text"
+                        name="email"
+                        value={user.email}
+                        onChange={handleChange}
+                        ref={emailRef}
+                        id="email"
+                      />
 
-                    <label className="title text-main-text">
-                      Your Email Address
-                    </label>
+                      <label
+                        className={`title ${
+                          error.emailError ? "text-red-400" : "text-main-text"
+                        }`}
+                        htmlFor="email"
+                      >
+                        Your Email Address
+                      </label>
+                    </div>
+                    <p className="text-xs text-red-400 mt-1">
+                      {error.emailError
+                        ? "Please enter your email in format: youremail@xample.com"
+                        : ""}
+                    </p>
                   </div>
 
                   <div className="group -ionic">
                     <textarea
                       className=" shadow border rounded field bg-secondary border-main-text text-main-text"
+                      type="message"
                       cols="15"
                       rows="7"
                       required
+                      name="message"
+                      value={user.message}
+                      onChange={handleChange}
+                      id="message"
                     ></textarea>
 
-                    <label className="title text-main-text">Your Message</label>
+                    <label className="title text-main-text" htmlFor="message">
+                      Your Message
+                    </label>
                   </div>
                   <div className="flex justify-end -mr-4 mt-10">
-                    <Button type={"primary"}>Send Message</Button>
+                    <Button type="primary" onClick={submitContact}>
+                      Send Message
+                    </Button>
                   </div>
                 </div>
               </form>
