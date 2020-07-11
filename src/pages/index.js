@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useState, useContext } from "react"
 // import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -14,6 +14,7 @@ import Footer from "../sections/footer"
 const IndexPage = () => {
   const { theme } = useContext(ThemeContext)
   const themeColor = theme ? "#727698" : "#b7bacc"
+
   return (
     <Layout>
       <SEO
