@@ -199,6 +199,106 @@ const SketchIcon = props => (
   </svg>
 )
 
+const SuccessIcon = props => (
+  <svg
+    id="successAnimation"
+    className="animated"
+    height={props.height}
+    width={props.width}
+    viewBox="0 0 70 70"
+  >
+    <path
+      id="successAnimationResult"
+      fill="#D8D8D8"
+      d="M35,60 C21.1928813,60 10,48.8071187 10,35 C10,21.1928813 21.1928813,10 35,10 C48.8071187,10 60,21.1928813 60,35 C60,48.8071187 48.8071187,60 35,60 Z M23.6332378,33.2260427 L22.3667622,34.7739573 L34.1433655,44.40936 L47.776114,27.6305926 L46.223886,26.3694074 L33.8566345,41.59064 L23.6332378,33.2260427 Z"
+    />
+    <circle
+      id="successAnimationCircle"
+      cx="200"
+      cy="200"
+      r="24"
+      stroke="#979797"
+      stroke-width="2"
+      stroke-linecap="round"
+      fill="transparent"
+    />
+    <polyline
+      id="successAnimationCheck"
+      stroke="#979797"
+      stroke-width="2"
+      points="23 34 34 43 47 27"
+      fill="transparent"
+    />
+  </svg>
+)
+
+const FailureIcon = props => (
+  <svg
+    id="failureAnimation"
+    viewBox="0 0 70 70"
+    height={props.height}
+    width={props.width}
+  >
+    <circle
+      id="failureAnimationCircle"
+      cx="35"
+      cy="35"
+      r="24"
+      stroke="#D50000"
+      stroke-width="3"
+      stroke-linecap="round"
+      fill="transparent"
+    />
+    <polyline
+      class="failureAnimationCheckLine"
+      stroke="#D50000"
+      stroke-width="3"
+      points="25,25 45,45"
+      fill="transparent"
+    />
+    <polyline
+      class="failureAnimationCheckLine"
+      stroke="#D50000"
+      stroke-width="3"
+      points="45,25 25,45"
+      fill="transparent"
+    />
+  </svg>
+)
+
+const LoaderIcon = props => (
+  <svg
+    width={props.width}
+    height={props.height}
+    fill={props.color}
+    viewBox="0 0 40 40"
+    enableBackground="new 0 0 40 40"
+  >
+    <path
+      opacity="0.2"
+      fill="#000"
+      d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
+    />
+    <path
+      fill="#000"
+      d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+    C22.32,8.481,24.301,9.057,26.013,10.047z"
+    >
+      <animateTransform
+        attributeType="xml"
+        attributeName="transform"
+        type="rotate"
+        from="0 20 20"
+        to="360 20 20"
+        dur="0.5s"
+        repeatCount="indefinite"
+      />
+    </path>
+  </svg>
+)
+
 export {
   GithubIcon,
   BehanceIcon,
@@ -214,4 +314,7 @@ export {
   FirebaseIcon,
   TailwindIcon,
   SketchIcon,
+  SuccessIcon,
+  FailureIcon,
+  LoaderIcon,
 }

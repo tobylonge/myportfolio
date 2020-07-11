@@ -28,6 +28,194 @@ body {
   top: 30%;
 }
 
+.group {
+  position: relative;
+
+  width: 100%;
+  &.-ionic {
+    > textarea.field {
+      height: auto;
+      padding-top: 5px;
+    }
+    > .field {
+      height: 2.8rem;
+
+      text-indent: 12px;
+      // border-radius: 6px;
+      // border: 1px solid #ddd;
+
+      &:focus,
+      &.notEmpty {
+        // border-color: map-get($colors, primary);
+
+        + .title {
+          top: 0;
+
+          // color: map-get($colors, primary);
+        }
+      }
+
+      + .title {
+        left: 8px;
+
+        padding: 0 0.5rem;
+
+        background-color: var(--secondary);
+      }
+    }
+  }
+
+  > .field {
+    width: 100%;
+
+    // border: 0;
+    outline: none;
+
+    + .title {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      // color: var(--main-text);
+      transition: 0.3s;
+      pointer-events: none;
+    }
+
+    &:focus,
+    &.notEmpty {
+      + .title {
+        transition: 0.3s;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--secondary) inset !important;
+  -webkit-text-fill-color: var(--text-main) !important;
+}
 // .main-content {
 //   height: calc(100vh - 70px);
 // }
+
+//Success Icon Animation
+$circle-length: 151px;
+$check-length: 36px;
+@keyframes scaleAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drawCircle {
+  0% {
+    stroke-dashoffset: $circle-length;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCheck {
+  0% {
+    stroke-dashoffset: $check-length;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#successAnimationCircle {
+  stroke-dasharray: $circle-length $circle-length;
+  stroke: #82e0aa;
+}
+
+#successAnimationCheck {
+  stroke-dasharray: $check-length $check-length;
+  stroke: #82e0aa;
+}
+
+#successAnimationResult {
+  fill: #82e0aa;
+  opacity: 0;
+}
+
+#successAnimation.animated {
+  animation: 1s ease-out 0s 1 both scaleAnimation;
+  #successAnimationCircle {
+    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle,
+      0.3s linear 0.9s 1 both fadeOut;
+  }
+  #successAnimationCheck {
+    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck,
+      0.3s linear 0.9s 1 both fadeOut;
+  }
+  #successAnimationResult {
+    animation: 2s linear 0.9s both fadeIn;
+  }
+}
+
+#failureAnimationCircle {
+  stroke-dasharray: 300px 300px;
+  stroke: #d50000;
+}
+
+#failureAnimationCheck {
+  stroke-dasharray: 35px 35px;
+  stroke: #d50000;
+}
+
+#failureAnimation.animated {
+  animation: 1s ease-out 0s 1 both scaleAnimation;
+}
+#failureAnimationCircle,
+#failureAnimation.animated,
+#failureAnimation.animated #failureAnimationCircle {
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle;
+}
+
+#failureAnimation.animated #successAnimationCheck {
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck;
+}
+.failureAnimationCheckLine,
+#failureAnimation.animated .failureAnimationCheckLine {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawLine 1s cubic-bezier(1, 0.2, 0.1, 1) forwards;
+}
