@@ -1,7 +1,14 @@
 import React from "react"
 import Button from "../components/button"
 import Skills from "./skills"
-const about = () => {
+const about = props => {
+  const openCV = () => {
+    window.open(
+      "https://drive.google.com/file/d/1SP8D-ot6ZoM5fc-lWsj22pIJZZu_Hmk_/view?usp=sharing",
+      "_blank"
+    )
+  }
+
   return (
     <div
       className={`bg-secondary justify-center flex min-h-screen `}
@@ -13,25 +20,29 @@ const about = () => {
             About Me
           </h4>
           <p className="text-main-text leading-7 mb-6">
-            Oluwatobi Alonge is a self-taught UI/UX Designer and Front-End
-            Developer working in Lagos, Nigeria. He is passionate about creating
-            intuitive, engaging and clean designs as well as strong skills and
-            ability in writing clean and efficient code
+            I am a self-taught UI/UX Designer and Front-End Developer working in
+            Lagos, Nigeria. I am passionate about creating intuitive, engaging
+            and clean designs as well as strong skills and ability in writing
+            clean and efficient code
           </p>
           <div className="text-main-text leading-7 mb-6">
-            Identified strengths include:
+            My identified strengths include:
             <ul className="list-inside list-disc">
               <li>
                 Able to work as a team or independently towards identified goals
               </li>
-              <li>Humility and</li>
+              <li>Creative and critical thinking</li>
               <li>
                 Open to feedback which I believe drives progress in a team.
               </li>
             </ul>
           </div>
-          <Button type={"primary"}>Contact Me</Button>
-          <Button type={"outline"}>Download CV</Button>
+          <Button type={"primary"} onClick={props.scrollToRef}>
+            Contact Me
+          </Button>
+          <Button type={"outline"} onClick={openCV}>
+            Download CV
+          </Button>
           <Skills />
         </div>
       </div>

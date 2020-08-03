@@ -30,7 +30,7 @@ const Home = props => {
       // style={{ height: "calc(100vh - 3.875rem)" }}
     >
       {/* <Header /> */}
-      <div className="w-full sm:w-10/12 md:w-9/12 mx-auto px-5 sm:px-0 flex h-full relative flex-col-reverse sm:flex-row sm:justify-start justify-end ">
+      <div className="w-full sm:w-10/12 md:w-9/12 mx-auto px-5 sm:px-0 flex h-full relative flex-col-reverse sm:flex-row sm:justify-start justify-end mt-24 sm:mt-0">
         <div className="sm:w-1/2 self-center">
           <h4 className="uppercase text-sm text-main-color before-line mb-3">
             Hello
@@ -62,7 +62,9 @@ const Home = props => {
               </a>
             </div>
           </div>
-          <Button type={"primary"}>Contact Me</Button>
+          <Button type={"primary"} onClick={props.scrollToRef}>
+            Contact Me
+          </Button>
         </div>
         <div className="sm:w-1/2 px-10 sm:pt-10 sm:flex sm:flex-col sm:absolute p-0 bottom-0 right-0">
           <div className="hidden sm:block">

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useContext, useRef } from "react"
 // import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -14,6 +14,15 @@ import Footer from "../sections/footer"
 const IndexPage = () => {
   const { theme } = useContext(ThemeContext)
   const themeColor = theme ? "#727698" : "#b7bacc"
+  const contactRef = useRef(null)
+
+  const scrollToRef = () => {
+    // window.scrollTo(0, contactRef.current.offsetTop - 200)
+    window.scrollTo({
+      top: contactRef.current.offsetTop - 200,
+      behavior: "smooth",
+    })
+  }
 
   return (
     <Layout>
@@ -24,10 +33,12 @@ const IndexPage = () => {
 
       <div className="h-full">
         <Header />
-        <Home themeColor={themeColor} />
-        <About />
+        <Home themeColor={themeColor} scrollToRef={scrollToRef} />
+        <About scrollToRef={scrollToRef} />
         <Works />
-        <Contact themeColor={themeColor} />
+        <div ref={contactRef}>
+          <Contact themeColor={themeColor} />
+        </div>
         <Footer />
       </div>
     </Layout>

@@ -1,8 +1,30 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useState, useEffect } from "react"
 import { SuccessIcon, FailureIcon } from "../components/Icons"
 import Button from "../components/button"
 
-export default function modal(props) {
+export default function Modal(props) {
+  const [timeLeft, setTimeLeft] = useState(30)
+
+  useEffect(() => {
+    // exit early when we reach 0
+    if (!timeLeft) {
+      props.closeModal()
+      clearInterval(intervalId)
+      return
+    }
+
+    // save intervalId to clear the interval when the
+    // component re-renders
+    const intervalId = setInterval(() => {
+      setTimeLeft(timeLeft - 1)
+    }, 1000)
+
+    // clear interval on re-render to avoid memory leaks
+    return () => clearInterval(intervalId)
+    // add timeLeft as a dependency to re-rerun the effect
+    // when we update it
+  }, [timeLeft])
+
   return (
     <div
       className={`modal ${
@@ -30,7 +52,7 @@ export default function modal(props) {
         <div className="modal-content py-4 text-left px-6">
           <div className="flex justify-end items-center opacity-50">
             <div
-              class="modal-close cursor-pointer z-50"
+              className="modal-close cursor-pointer z-50"
               onClick={props.closeModal}
             >
               <svg
@@ -57,7 +79,7 @@ export default function modal(props) {
                   </Button>
 
                   <p className="text-sm -mt-2 mb-4 text-main-text">
-                    Window will close automatically in 30s
+                    Window will close automatically in {timeLeft}s
                   </p>
                 </div>
               </Fragment>

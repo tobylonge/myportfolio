@@ -15,6 +15,7 @@ const Contact = props => {
     name: "",
     email: "",
     message: "",
+    honey: "",
   })
   const [error, setError] = useState({
     nameError: false,
@@ -81,25 +82,32 @@ const Contact = props => {
     if (!isVaild) {
       return
     }
+    if (user && user.honey) {
+      return
+    }
     setIsSubmitting(true)
     console.log("Submiting Form")
-    axios
-      .post(`${host_url}sendMail`, user)
-      .then(response => {
-        console.log("response ", response)
-        if (response.status === 200) {
-          openModal(1)
-          setIsSubmitting(false)
-          resetForm()
-        } else {
-          props.openModal(2)
-          setIsSubmitting(false)
-        }
-      })
-      .catch(error => {
-        openModal(2)
-        setIsSubmitting(false)
-      })
+
+    openModal(1)
+    setIsSubmitting(false)
+    resetForm()
+    // axios
+    //   .post(`${host_url}sendMail`, user)
+    //   .then(response => {
+    //     console.log("response ", response)
+    //     if (response.status === 200) {
+    //       openModal(1)
+    //       setIsSubmitting(false)
+    //       resetForm()
+    //     } else {
+    //       props.openModal(2)
+    //       setIsSubmitting(false)
+    //     }
+    //   })
+    //   .catch(error => {
+    //     openModal(2)
+    //     setIsSubmitting(false)
+    //   })
   }
 
   const resetForm = () => {
@@ -165,7 +173,7 @@ const Contact = props => {
                 id="contact"
               >
                 <form className="justify-center flex">
-                  <div className="mb-4 lg:w-2/3 w-auto">
+                  <div className="mb-4 lg:w-2/3 w-full">
                     <div className="mb-8">
                       <div className="group -ionic">
                         <input
@@ -245,6 +253,24 @@ const Contact = props => {
                         Your Message
                       </label>
                     </div>
+
+                    <div className="mb-8 hidden">
+                      <div className="group -ionic">
+                        <input
+                          className={`shadow border rounded field bg-secondary text-main-text`}
+                          type="text"
+                          value={user.honey || ""}
+                          name="honey"
+                          onChange={handleChange}
+                          id="honey"
+                        />
+
+                        <label className={`title`} htmlFor="honey">
+                          Honeypot
+                        </label>
+                      </div>
+                    </div>
+
                     <div className="flex justify-end -mr-4 mt-10">
                       <Button type="primary" onClick={submitContact}>
                         {isSubmitting ? (
@@ -261,11 +287,13 @@ const Contact = props => {
           </div>
         </div>
       </div>
-      <Modal
-        closeModal={closeModal}
-        modal={modal}
-        submitContact={submitContact}
-      />
+      {modal && modal.open && (
+        <Modal
+          closeModal={closeModal}
+          modal={modal}
+          submitContact={submitContact}
+        />
+      )}
     </Fragment>
   )
 }

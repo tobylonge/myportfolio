@@ -218,14 +218,14 @@ const SuccessIcon = props => (
       cy="200"
       r="24"
       stroke="#979797"
-      stroke-width="2"
-      stroke-linecap="round"
+      strokeWidth="2"
+      strokeLinecap="round"
       fill="transparent"
     />
     <polyline
       id="successAnimationCheck"
       stroke="#979797"
-      stroke-width="2"
+      strokeWidth="2"
       points="23 34 34 43 47 27"
       fill="transparent"
     />
@@ -245,21 +245,21 @@ const FailureIcon = props => (
       cy="35"
       r="24"
       stroke="#D50000"
-      stroke-width="3"
-      stroke-linecap="round"
+      strokeWidth="3"
+      strokeLinecap="round"
       fill="transparent"
     />
     <polyline
       class="failureAnimationCheckLine"
       stroke="#D50000"
-      stroke-width="3"
+      strokeWidth="3"
       points="25,25 45,45"
       fill="transparent"
     />
     <polyline
       class="failureAnimationCheckLine"
       stroke="#D50000"
-      stroke-width="3"
+      strokeWidth="3"
       points="45,25 25,45"
       fill="transparent"
     />

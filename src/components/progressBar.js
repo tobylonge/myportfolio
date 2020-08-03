@@ -8,7 +8,7 @@ export default function ProgressBar(props) {
       <div className="ml-4">
         <div className="flex justify-between">
           <p className="text-xs text-main-text">{props.title}</p>
-          <p className="text-xs text-main-text">{props.percentage}</p>
+          <p className="text-xs text-main-text">{props.stage}</p>
         </div>
         <div
           className="shadow mt-2 rounded-full"

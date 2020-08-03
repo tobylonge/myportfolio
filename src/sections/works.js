@@ -40,8 +40,6 @@ const Works = () => {
           desc => desc.descId === Number(workId)
         )
 
-        console.log("index ", index)
-
         if (index > -1) {
           work = { ...work, ...description[index] }
         }
