@@ -17,7 +17,7 @@ const IndexPage = () => {
   const contactRef = useRef(null)
 
   const scrollToRef = () => {
-    // window.scrollTo(0, contactRef.current.offsetTop - 200)
+    window.scrollTo(0, contactRef.current.offsetTop - 200)
     window.scrollTo({
       top: contactRef.current.offsetTop - 200,
       behavior: "smooth",
