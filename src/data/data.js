@@ -117,9 +117,8 @@ export const description = [
   },
   {
     descId: 5,
-    descTitle: "Thebasketballarena",
-    descText:
-      "A platform you get African Basketball news and info of African decent conquering the NBA, WNBA and the Continent.",
+    descTitle: "Success Power Radio",
+    descText: "An online radio for an inspirational outfit",
     descLang: [
       {
         label: "HTML",
@@ -131,13 +130,13 @@ export const description = [
         color: "#CB6396",
         icon: <SCSSIcon height={12} width={12} color={"#ffffff"} />,
       },
-      {
-        label: "React",
-        color: "#2fa0bf",
-        icon: <ReactIcon height={12} width={12} color={"#ffffff"} />,
-      },
+      // {
+      //   label: "React",
+      //   color: "#2fa0bf",
+      //   icon: <ReactIcon height={12} width={12} color={"#ffffff"} />,
+      // },
     ],
-    descLink: "https://basketballarena.netlify.app",
+    descLink: "https://radio.successpower.org/",
     descType: 2,
   },
   {

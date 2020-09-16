@@ -3,7 +3,7 @@ import ProgressBar from "../components/progressBar"
 
 const Skills = () => {
   const [skills] = useState([
-    { title: "UI/UX DESIGN (BLASMIQ, SKETCH, MARVEL)", percentage: "90%" },
+    { title: "UI/UX DESIGN (BLASMIQ, SKETCH, MARVEL)", percentage: "98%" },
     { title: "HTML", percentage: "98%" },
     { title: "CSS (SCSS, Bootstrap, Tailwindcss)", percentage: "98%" },
     { title: "JAVASCRIPT (ES6, REACT JS GATSBY JS)", percentage: "80%" },
