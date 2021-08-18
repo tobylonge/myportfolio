@@ -250,14 +250,14 @@ const FailureIcon = props => (
       fill="transparent"
     />
     <polyline
-      class="failureAnimationCheckLine"
+      className="failureAnimationCheckLine"
       stroke="#D50000"
       strokeWidth="3"
       points="25,25 45,45"
       fill="transparent"
     />
     <polyline
-      class="failureAnimationCheckLine"
+      className="failureAnimationCheckLine"
       stroke="#D50000"
       strokeWidth="3"
       points="45,25 25,45"
