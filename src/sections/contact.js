@@ -88,26 +88,26 @@ const Contact = props => {
     setIsSubmitting(true)
     console.log("Submiting Form")
 
-    // openModal(1)
-    // setIsSubmitting(false)
-    // resetForm()
-    axios
-      .post(`${host_url}sendMail`, user)
-      .then(response => {
-        console.log("response ", response)
-        if (response.status === 200) {
-          openModal(1)
-          setIsSubmitting(false)
-          resetForm()
-        } else {
-          props.openModal(2)
-          setIsSubmitting(false)
-        }
-      })
-      .catch(error => {
-        openModal(2)
-        setIsSubmitting(false)
-      })
+    openModal(1)
+    setIsSubmitting(false)
+    resetForm()
+    // axios
+    //   .post(`${host_url}sendMail`, user)
+    //   .then(response => {
+    //     console.log("response ", response)
+    //     if (response.status === 200) {
+    //       openModal(1)
+    //       setIsSubmitting(false)
+    //       resetForm()
+    //     } else {
+    //       props.openModal(2)
+    //       setIsSubmitting(false)
+    //     }
+    //   })
+    //   .catch(error => {
+    //     openModal(2)
+    //     setIsSubmitting(false)
+    //   })
   }
 
   const resetForm = () => {
